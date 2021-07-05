@@ -6,9 +6,9 @@ BBPATH = "${TOPDIR}"
 BBFILES ?= ""
 
 BBLAYERS ?= " \
-  /home/kamel_container/yocto/poky/meta \
-  /home/kamel_container/yocto/poky/meta-poky \
-  /home/kamel_container/yocto/poky/meta-yocto-bsp \
-  /home/kamel_container/yocto/meta-openembedded/meta-oe \
-  /home/kamel_container/yocto/meta-bootlink \
+  ${TOPDIR}/../sources/poky/meta \
+  ${TOPDIR}/../sources/poky/meta-poky \
+  ${TOPDIR}/../sources/poky/meta-yocto-bsp \
+  ${TOPDIR}/../sources/meta-openembedded/meta-oe \
+  ${TOPDIR}/../sources/meta-bootlink \
   "

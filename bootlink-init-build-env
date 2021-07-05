@@ -1,12 +1,12 @@
 #!/bin/sh
 
-TEMPLATECONF="$(pwd)/sources/meta-bootlink/confs/conf-bootlink"
+TEMPLATECONF="$(pwd)/sources/meta-bootlink/confs/"
 export TEMPLATECONF
 
 BSPDIR="$(pwd)"
 export BSPDIR
 
-./sources/poky/oe-init-build-env $1
+source sources/poky/oe-init-build-env $1
 
 if [ -n "$DISTRO" ]
 then
@@ -14,5 +14,5 @@ then
 fi
 
 echo "Copying local.conf and bblayers.conf"
-cp -rf $(pwd)/sources/meta-bootlink/confs/conf-bootlink/local.conf.sample $1/conf/local.conf
-cp -rf $(pwd)/sources/meta-bootlink/confs/conf-bootlink/bblayers.conf.sample $1/conf/bblayers.conf
+cp -f ../sources/meta-bootlink/confs/local.conf.sample $1/conf/local.conf
+cp -rf ../sources/meta-bootlink/confs/bblayers.conf.sample $1/conf/bblayers.conf
