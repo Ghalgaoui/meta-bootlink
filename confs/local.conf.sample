@@ -11,7 +11,7 @@ MACHINE ?= "raspberrypi4-64"
 # is safe to share between multiple builds on the same machine too.
 #
 # The default is a downloads directory under TOPDIR which is the build directory.
-DL_DIR ?= "${BSPDIR}/downloads/"
+DL_DIR ?= "${TOPDIR}/downloads/"
 #
 # Where to place shared-state files
 #
