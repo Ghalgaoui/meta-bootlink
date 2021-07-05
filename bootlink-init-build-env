@@ -13,4 +13,6 @@ then
         sed -e "s,DISTRO ?= \"poky\",DISTRO ?= '$DISTRO',g" -i conf/local.conf
 fi
 
-
+echo "Copying local.conf and bblayers.conf"
+cp -rf $(pwd)/sources/meta-bootlink/confs/conf-bootlink/local.conf.sample $1/conf/local.conf
+cp -rf $(pwd)/sources/meta-bootlink/confs/conf-bootlink/bblayers.conf.sample $1/conf/bblayers.conf
