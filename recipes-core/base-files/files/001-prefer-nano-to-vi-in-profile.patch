@@ -1,0 +1,12 @@
+diff -ruN base-files-origin/profile base-files-modified/profile
+--- base-files-origin/profile	2019-12-28 14:08:38.755388472 +0100
++++ base-files-modified/profile	2019-12-28 14:11:21.555616677 +0100
+@@ -2,7 +2,7 @@
+ # and Bourne compatible shells (bash(1), ksh(1), ash(1), ...).
+ 
+ PATH="/usr/local/bin:/usr/bin:/bin"
+-EDITOR="vi"			# needed for packages like cron, git-commit
++EDITOR="nano"			# needed for packages like cron, git-commit
+ [ "$TERM" ] || TERM="vt100"	# Basic terminal capab. For screen etc.
+ 
+ # Add /sbin & co to $PATH for the root user

@@ -1,0 +1,12 @@
+diff -ruN nano-4.4.orig/src/nano.c nano-4.4.modi/src/nano.c
+--- nano-4.4.orig/src/nano.c	2019-08-18 12:49:22.000000000 +0100
++++ nano-4.4.modi/src/nano.c	2021-06-16 21:12:49.840921475 +0100
+@@ -2685,7 +2685,7 @@
+ #ifdef ENABLE_HELP
+ 	if (*openfile->filename == '\0' && openfile->totsize == 0 &&
+ 				openfile->next == openfile && !ISSET(NO_HELP))
+-		statusbar(_("Welcome to nano.  For basic help, type Ctrl+G."));
++		statusbar(_("Welcome to bootlink editor nano.  For basic help, type Ctrl+G."));
+ #endif
+ 
+ 	while (TRUE) {

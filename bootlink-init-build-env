@@ -1,0 +1,16 @@
+#!/bin/sh
+
+TEMPLATECONF="$(pwd)/sources/meta-bootlink/confs/conf-bootlink"
+export TEMPLATECONF
+
+BSPDIR="$(pwd)"
+export BSPDIR
+
+./sources/poky/oe-init-build-env $1
+
+if [ -n "$DISTRO" ]
+then
+        sed -e "s,DISTRO ?= \"poky\",DISTRO ?= '$DISTRO',g" -i conf/local.conf
+fi
+
+

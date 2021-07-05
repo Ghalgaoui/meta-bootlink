@@ -1,0 +1,14 @@
+# POKY_BBLAYERS_CONF_VERSION is increased each time build/conf/bblayers.conf
+# changes incompatibly
+POKY_BBLAYERS_CONF_VERSION = "2"
+
+BBPATH = "${TOPDIR}"
+BBFILES ?= ""
+
+BBLAYERS ?= " \
+  /home/kamel_container/yocto/poky/meta \
+  /home/kamel_container/yocto/poky/meta-poky \
+  /home/kamel_container/yocto/poky/meta-yocto-bsp \
+  /home/kamel_container/yocto/meta-openembedded/meta-oe \
+  /home/kamel_container/yocto/meta-bootlink \
+  "

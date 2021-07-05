@@ -1,0 +1,30 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:             ntpd
+# Required-Start:       $networking
+# Required-Stop:        
+# Default-Start:        2 3 4 5
+# Default-Stop:         1
+# Short-Description:    Network Time Protocol client Daemon
+### END INIT INFO
+#
+
+do_start()
+{
+	start-stop-daemon --start --exec ntpd -- -p pool.ntp.org 
+}
+
+do_stop()
+{
+	start-stop-daemon --stop --name ntpd
+}
+
+
+case "$1" in
+  start) do_start ;;
+  stop)  do_stop  ;;
+  restart) do_stop; do_start ;;
+  *) echo "Usage: $0 {start|stop|restart}" >&2; exit 1 ;; 
+esac
+
+exit 0

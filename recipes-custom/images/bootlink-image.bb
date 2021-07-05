@@ -1,0 +1,38 @@
+SUMMARY = "A console-only image that fully supports the target device \
+hardware."
+
+IMAGE_FEATURES += "splash"
+
+LICENSE = "MIT"
+
+inherit core-image
+
+GROUPADD_PARAM_${PN} = "bluetooth"
+IMAGE_FEATURES += "read-only-rootfs"
+IMAGE_FEATURES += "splash"
+IMAGE_FEATURES += "tools-debug"
+IMAGE_FEATURES += "tools-profile"
+IMAGE_FEATURES += "tools-sdk"
+IMAGE_FEATURES += "ssh-server-dropbear"
+IMAGE_INSTALL_append = " mc"
+IMAGE_INSTALL_append = " nano"
+IMAGE_INSTALL_append = " vim"
+IMAGE_INSTALL_append = " bootlink-scripts"
+IMAGE_INSTALL_append = " seq-parenthesis"
+IMAGE_INSTALL_append = " makefile-example"
+IMAGE_INSTALL_append = " src-example"
+#IMAGE_INSTALL_append = " resolvconf"
+DISTRO_FEATURES_append += "wifi"
+IMAGE_INSTALL_append = " wpa-supplicant"
+IMAGE_INSTALL_append = " alsa-lib"
+IMAGE_INSTALL_append = " alsa-plugins"
+IMAGE_INSTALL_append = " alsa-tools"
+IMAGE_INSTALL_append = " alsa-utils"
+IMAGE_INSTALL_append = " alsa-utils-scripts"
+IMAGE_INSTALL_append = " lame"
+IMAGE_INSTALL_append = " connman"
+IMAGE_INSTALL_append = " connman-client"
+IMAGE_INSTALL_append = " iptables"
+IMAGE_INSTALL_append = " bluez5"
+IMAGE_INSTALL_append = " bluez5-dev"
+#IMAGE_INSTALL_append = " omxplayer"

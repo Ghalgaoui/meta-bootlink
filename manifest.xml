@@ -1,0 +1,30 @@
+<!-- -- 
+With so many layers, manually cloning each of them and adding them to your project's
+conf/bblayers.conf file is cumbersome. The community is using the repo tool developed
+by Google for their community Android to ease the installation of Yocto.
+
+The repo tool is a Python utility that parses an XML file, called manifest , with a list of Git
+repositories. The repo tool is then used to manage those repositories as a whole.
+<!-- -->
+
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <default revision="dunfell" sync-j="4"/>
+
+  <remote fetch="git://git.yoctoproject.org" name="yocto"/>
+  <remote fetch="git://git.openembedded.org" name="oe"/>
+  <remote fetch="git://github.com/Ghalgaoui/" name="Ghalgaoui"/>
+
+  <project remote="yocto" name="poky" revision="dunfell" path="sources/poky"/>
+  <project remote="yocto" name="meta-raspberrypi" revision="dunfell" path="sources/meta-raspberrypi"/>
+  <project remote="oe" name="meta-openembedded" revision="dunfell" path="sources/meta-openembedded"/>
+  <project remote="Ghalgaoui" name="meta-bootlink.git" revision="master" path="sources/meta-bootlink">
+    <copyfile src="README.md" dest="README.md" />
+  </project>
+</manifest>
+<!-- -- 
+Repo yocto: https://github.com/aurelihein/meta-bouin
+
+Docker by Alex González: https://github.com/alexgg/docker-dey
+<!-- -->
+
