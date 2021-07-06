@@ -12,7 +12,3 @@ if [ -n "$DISTRO" ]
 then
         sed -e "s,DISTRO ?= \"poky\",DISTRO ?= '$DISTRO',g" -i conf/local.conf
 fi
-
-echo "Copying local.conf and bblayers.conf"
-cp -f ../sources/meta-bootlink/confs/local.conf.sample $1/conf/local.conf
-cp -rf ../sources/meta-bootlink/confs/bblayers.conf.sample $1/conf/bblayers.conf
