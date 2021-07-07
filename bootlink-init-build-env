@@ -12,3 +12,7 @@ if [ -n "$DISTRO" ]
 then
         sed -e "s,DISTRO ?= \"poky\",DISTRO ?= '$DISTRO',g" -i conf/local.conf
 fi
+
+mv conf/local.conf conf/local.conf.sample
+# Generate the local.conf based on the Yocto defaults
+grep -v '^#\|^$' conf/local.conf.sample > conf/local.conf
