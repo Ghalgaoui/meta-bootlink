@@ -1,2 +1,2 @@
 # meta-bootlink
-Custom yocto meta 
+Custom yocto meta for Diagnostic RPI4 B+ 
