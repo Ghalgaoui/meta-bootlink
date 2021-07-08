@@ -3,22 +3,21 @@ HOMEPAGE = "https://github.com/Arkq/bluez-alsa"
 SECTION = "libs"
 
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://LICENSE.txt;md5=bb3e99e80c5d718213f35ae1def4c106"
+LIC_FILES_CHKSUM = "file://LICENSE;md5=72d868d66bdd5bf51fe67734431de057"
 
 SRC_URI = " \
     git://github.com/Arkq/bluez-alsa.git;protocol=https;branch=master \
-    file://0001-Fix-linkage-mark-external-variable-as-extern.patch \
 "
 
-SRCREV = "9045edb436ea755f395a2e09e4525b5defad286a"
+SRCREV = "88b1d09276ec198b43b99d14c69e14c4d580aa90"
 
 SRC_URI += "file://bluez-alsa.service"
 
 S  = "${WORKDIR}/git"
 
-DEPENDS += "alsa-lib bluez5 systemd glib-2.0 sbc"
+DEPENDS += "alsa-lib bluez5 systemd glib-2.0 sbc pulseaudio"
 
-PACKAGECONFIG[aac]  = "--enable-aac, --disable-aac, "
+PACKAGECONFIG[aac]  = "--enable-aac, --enable-ofono, --enable-debug, --disable-aac, "
 PACKAGECONFIG[aptx] = "--enable-aptx,--disable-aptx,"
 PACKAGECONFIG[hcitop]   = "--enable-hcitop,  --disable-hcitop,  libbsd ncurses"
 
