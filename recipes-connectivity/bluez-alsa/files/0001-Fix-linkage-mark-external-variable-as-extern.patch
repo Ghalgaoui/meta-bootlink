@@ -1,0 +1,65 @@
+From 3b7b70fbb70131adf0c0451c95b9a5313ddc8e53 Mon Sep 17 00:00:00 2001
+From: Arkadiusz Bokowy <arkadiusz.bokowy@gmail.com>
+Date: Sun, 9 Feb 2020 22:26:16 +0100
+Subject: [PATCH] Fix linkage - mark external variable as extern
+
+(cherry picked from commit 30a23dd7ce9b00c702fa48545f6b03038f9e17c6)
+
+Conflicts:
+	src/bluealsa-iface.h
+	src/bluez-a2dp.h
+	src/bluez-iface.h
+	src/ofono-iface.h
+	test/server-mock.c
+	test/test-ba.c
+	test/test-io.c
+	test/test-rfcomm.c
+
+Upstream-Status: Backport [master after tag v2.1.0]
+Signed-off-by: Max Krummenacher <max.krummenacher@toradex.com>
+---
+ src/bluez-a2dp.h  | 8 ++++----
+ src/bluez-iface.h | 4 ++--
+ 2 files changed, 6 insertions(+), 6 deletions(-)
+
+diff --git a/src/bluez-a2dp.h b/src/bluez-a2dp.h
+index 4826a6f..715fd89 100644
+--- a/src/bluez-a2dp.h
++++ b/src/bluez-a2dp.h
+@@ -17,15 +17,15 @@
+ 
+ #include "a2dp-codecs.h"
+ 
+-const a2dp_sbc_t bluez_a2dp_sbc;
++extern const a2dp_sbc_t bluez_a2dp_sbc;
+ #if ENABLE_MP3
+-const a2dp_mpeg_t bluez_a2dp_mpeg;
++extern const a2dp_mpeg_t bluez_a2dp_mpeg;
+ #endif
+ #if ENABLE_AAC
+-const a2dp_aac_t bluez_a2dp_aac;
++extern const a2dp_aac_t bluez_a2dp_aac;
+ #endif
+ #if ENABLE_APTX
+-const a2dp_aptx_t bluez_a2dp_aptx;
++extern const a2dp_aptx_t bluez_a2dp_aptx;
+ #endif
+ 
+ #endif
+diff --git a/src/bluez-iface.h b/src/bluez-iface.h
+index 7d61638..a86a1bd 100644
+--- a/src/bluez-iface.h
++++ b/src/bluez-iface.h
+@@ -13,7 +13,7 @@
+ 
+ #include <gio/gio.h>
+ 
+-const GDBusInterfaceInfo bluez_iface_endpoint;
+-const GDBusInterfaceInfo bluez_iface_profile;
++extern const GDBusInterfaceInfo bluez_iface_endpoint;
++extern const GDBusInterfaceInfo bluez_iface_profile;
+ 
+ #endif
+-- 
+2.20.1
+
