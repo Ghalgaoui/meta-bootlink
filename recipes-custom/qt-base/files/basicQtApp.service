@@ -1,0 +1,12 @@
+[Unit]
+Description=Qt Basic Application
+
+[Service]
+PIDFile=/run/basicQtApp.pid
+ExecStart=/usr/bin/basicQtApp
+ExecReload=/bin/kill -s HUP $MAINPID
+ExecStop=/bin/kill -s QUIT $MAINPID
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
