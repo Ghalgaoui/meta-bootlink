@@ -13,4 +13,5 @@ BBLAYERS ?= " \
   ${TOPDIR}/../sources/meta-openembedded/meta-oe \
   ${TOPDIR}/../sources/meta-bootlink \
   ${TOPDIR}/../sources/meta-raspberrypi \
+  ${TOPDIR}/../sources/meta-qt5 \
   "
